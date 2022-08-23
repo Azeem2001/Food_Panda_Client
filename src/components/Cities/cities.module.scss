@@ -1,0 +1,36 @@
+.Cities_container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    .city{
+        // border: 1px solid;
+        padding: 2rem;
+        width: 90%;
+        margin: 0 auto;
+             
+        .heading{
+           p{ position: relative;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 200;
+            color: #333;
+           }
+           p::after{
+            content: "Cities";
+               position: absolute;
+           //    bottom: 0;
+              top:-4rem;
+              left: 0;
+               font-size: 8rem;
+               font-weight: 600;
+               color: rgb(225, 227, 229);
+               z-index: -1;
+              }
+        
+      
+        }
+
+    }
+}

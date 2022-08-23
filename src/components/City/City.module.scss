@@ -1,0 +1,41 @@
+.city_contianer{
+  position: relative;
+    img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain; 
+    transition: 0.5s all ease-in-out;
+    &:hover{
+      scale: 1.1;
+      transition: 0.5s all ease-in-out; 
+    }
+  
+  }
+  &:hover .city_hover{
+    display: block;
+
+  }
+   p{
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #fff;
+   }
+   .city_hover{
+    display: none;
+    position: absolute;
+
+    bottom: -1.7rem;
+    left: -0.5rem;
+    z-index: 100;
+    
+    h1{
+      font-size: 10rem;
+      color: rgba(#6C0E38,0.7);
+    }
+   }
+   
+}

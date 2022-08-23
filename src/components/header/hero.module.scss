@@ -1,0 +1,47 @@
+.HeroHeader_container{
+    margin-top: 4rem;
+    width: 100%;
+    background-image: url(.../../../../../public/Images/hero-home-pk.webp.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    height: 70vh;
+      display: flex;
+      align-items: center;        
+      .content_section{
+       padding-left: 7rem;
+   
+       p{
+        font-size: 3rem;
+        padding-bottom: 1rem;
+        color:#333;
+        font-weight: 200;
+       }
+       .input_section{
+           background-color: #fff;
+           padding: 1rem;
+           box-shadow: 0 0.3rem 2rem rgb(0 0 0 / 10%);
+           display: flex;
+           gap: 1rem;
+           margin-top: 3rem;
+            
+           
+
+          
+           .btn{
+            background-color: #C60D5C;
+            color: #fff;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            font-weight: 500;
+            border-radius: 8px;
+           }
+
+           .center{
+            
+            margin-top: 1rem;
+           }
+       }
+}
+  
+}
