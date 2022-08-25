@@ -12,10 +12,10 @@ import {
   CircularProgress,
 } from "@mui/material";
 import { useDispatch } from "react-redux";
-import { userRegister } from "../../redux/actions/auth";
+import { userLogin, userRegister } from "../../redux/actions/auth";
 import { useNavigate } from "react-router-dom";
 
-const CreateAccount = () => {
+const Login = () => {
   let navigate = useNavigate();
   let dispatch = useDispatch();
   const panda = "./images/create_acount.png";
@@ -27,7 +27,6 @@ const CreateAccount = () => {
     showPassword: false,
   });
   let [email, setEmail] = useState("");
-  let [name, setName] = useState("");
   let [password, setPassword] = useState("");
   let [loading, setLoading] = useState(false);
    
@@ -46,14 +45,13 @@ const CreateAccount = () => {
     event.preventDefault();
   };
 
-  const register = () => {
+  const login = () => {
     let data = {
       email,
-      name,
       password,
     };
 
-    dispatch(userRegister(data, setEmail, setName, setPassword, navigate,setLoading));
+    dispatch(userLogin(data, setEmail, setPassword, navigate,setLoading));
   };
 
   return (
@@ -61,25 +59,16 @@ const CreateAccount = () => {
       <div className={style.Input}>
         <img src={panda} alt="" />
         <h1>Let's get you started!</h1>
-        <h4>First, create your account </h4>
+        <h4>Login to Continue </h4>
         <TextField
           className={style.text_input}
           fullWidth
-          id="outlined-filled"
+          id="standard-basic"
           label="Email"
-          variant="outlined"
+          variant="standard"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <div className={style.name}>
-          <TextField
-            id="outlined-uncontrolled"
-            label="Enter Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            fullWidth
-          />
-        </div>
         <div className={style.password}>
           <FormControl sx={{ mt: 3, width: "100%" }} variant="standard">
             <InputLabel htmlFor="standard-adornment-password">
@@ -103,17 +92,7 @@ const CreateAccount = () => {
               }
             />
           </FormControl>
-          <div className={style.requirement}>
-            <p>Password strength</p>
-            <hr />
-            <p>Password must contain</p>
-            <ul>
-              <li>At least 6 characters</li>
-              <li>At least one Upppercase letter{"(A-Z)"}</li>
-              <li>At least one lowercase letter{"(A-Z)"}</li>
-              <li>At least one number{"(0-9)"}</li>
-            </ul>
-          </div>
+        
         </div>
 
         {loading ? (
@@ -123,9 +102,9 @@ const CreateAccount = () => {
             variant="outlined"
             fullWidth
             className={style.login_btn}
-            onClick={register}
+            onClick={login}
           >
-            Create Account
+            Login
           </Button>
         )}
       </div>
@@ -133,4 +112,4 @@ const CreateAccount = () => {
   );
 };
 
-export default CreateAccount;
+export default Login;

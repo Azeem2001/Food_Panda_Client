@@ -63,6 +63,31 @@
          }
        }
 
-     
+     .password{
 
+      small{
+         font-size: 15px;
+         font-weight: 600  ;
+      }
+     }
+    .requirement{
+       
+       p{
+         margin-top: 1rem;
+         margin-bottom: 1rem;
+       }
+       hr{
+         height: 5px;
+         background-color: #808080;
+         border: none;
+         border-radius: 8px;
+       }
+       ul{
+         li{
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            list-style-type: lower-alpha;
+         }
+       }
+    }
 }
