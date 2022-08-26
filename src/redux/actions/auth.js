@@ -56,7 +56,7 @@ export const checkEmail =
   (formData, setLoading, navigate, setRigester) => async (dispatch) => {
     setLoading(true);
     try {
-      console.log(formData);
+      // console.log(formData);
       let response = await axios.post(
         `https://9a5e-2407-aa80-14-568d-390a-381d-7e50-a2b3.in.ngrok.io/api/auth/is-email`,
         {
@@ -79,3 +79,22 @@ export const checkEmail =
       setLoading(false);
     }
   };
+   export const currentUser = (usertoken)=> async(dispatch)=> {
+    try {
+      let response = await axios.post(`${BASE_URL}/api/auth/current-user`,);
+      console.log(response.data)
+      dispatch({ type: Types.GET_CURRENT_USER, payload: response?.data });
+    } catch (error) {
+      dispatch({
+        type: Types.GET_CURRENT_USER_FAILED,
+        payload: error?.response?.status,
+      });
+      console.log(error)
+    }
+   }
+   export const logout = ()=> async(dispatch)=>{
+      localStorage.removeItem('token') 
+      dispatch(
+        
+      )  
+   }

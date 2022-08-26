@@ -122,12 +122,12 @@ const Cities = () => {
           </div>
           <div className={style.city_cards}>
             <Grid container spacing={5}>
-              {allCities.map((items) => (
-                <>
+              {allCities?.map((items,i) => (
+                <Fragment key={i}>
                   <Grid item xs={12} md={6} lg={2.4}>
                     <City setItem={items} />
                   </Grid>
-                </>
+                </Fragment>
               ))}
               ;
             </Grid>

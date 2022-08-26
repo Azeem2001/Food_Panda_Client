@@ -5,7 +5,7 @@ let initialState = {
   status: "",
   token: "",
   error: "",
-  
+  user: {},
 };
 
 export default function (state = initialState, action) {
@@ -15,13 +15,10 @@ export default function (state = initialState, action) {
     case Types.USER_LOGIN:
       return {
         ...state,
-        success: payload?.success,
-        status: payload?.status,
-        token: payload?.token,
+        ...payload,
       };
     case Types.USER_REGISTERED_FAILED:
     case Types.USER_LOGIN_FAILED:
-
       return {
         ...state,
         success: false,
@@ -29,9 +26,21 @@ export default function (state = initialState, action) {
         token: "",
         error: payload?.error,
       };
-
+    case Types.GET_CURRENT_USER:
+      return {
+        ...state,
+        ...payload,
+      };
+    case Types.USER_LOGOUT:
+      return {
+        ...state,
+        success: null,
+        status: "",
+        token: "",
+        error: "",
+        user: {},
+      };
     default:
       return state;
   }
 }
-   
