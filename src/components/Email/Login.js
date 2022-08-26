@@ -18,7 +18,7 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
   let navigate = useNavigate();
   let dispatch = useDispatch();
-  const panda = "./images/create_acount.png";
+  const panda = "./images/login_icon.jpg";
   const [values, setValues] = React.useState({
     amount: "",
     password: "",
@@ -96,7 +96,7 @@ const Login = () => {
         </div>
 
         {loading ? (
-          <CircularProgress color="secondary" />
+          <CircularProgress className={style.loading} color="success" />
         ) : (
           <Button
             variant="outlined"

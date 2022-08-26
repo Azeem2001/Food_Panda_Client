@@ -5,6 +5,7 @@ let initialState = {
   status: "",
   token: "",
   error: "",
+  
 };
 
 export default function (state = initialState, action) {
@@ -33,3 +34,4 @@ export default function (state = initialState, action) {
       return state;
   }
 }
+   
