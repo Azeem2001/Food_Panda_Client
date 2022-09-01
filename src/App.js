@@ -9,6 +9,8 @@ import LoginPage from "./pages/Login/LoginPage";
 import setAuthToken from "./utils/setAuthToken";
 import { currentUser } from "./redux/actions/auth";
 import { useDispatch, useSelector } from "react-redux";
+import Resturant from "./pages/Resturant/Resturant";
+import ResturantDetails from "./pages/ResturantDetails/ResturantDetails";
 
 function App() {
   let token = useSelector((state) => state.auth?.token);
@@ -30,11 +32,17 @@ function App() {
             <Fragment>
               {" "}
               <Route path="/" element={<Home />}></Route>
+              <Route path="/city/:id" element={<Resturant />}></Route>
+              <Route
+                path="/resturantdetail"
+                element={<ResturantDetails />}
+              ></Route>
             </Fragment>
           ) : (
             <Fragment>
               <Route path="/Rigester" element={<Rigester />}></Route>
               <Route path="/LoginPage" element={<LoginPage />}></Route>
+            
             </Fragment>
           )}
         </Routes>

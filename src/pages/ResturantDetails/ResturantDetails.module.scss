@@ -1,0 +1,111 @@
+.ResturantDetails_container{
+    width: 100%;
+    margin-top: 2rem;
+     
+    img{
+        width: 100%;
+    }
+    .resturant_details{
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+    div{
+        h1{
+            font-weight: 400;
+            margin-top: 1rem;
+           margin-bottom: 1rem;
+           color: #333333;
+        }   
+        span{
+            padding-left: 1rem;
+            color: gray;
+        }
+        p{
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #333333;
+        }
+    }
+
+        div{
+            h3{
+                font-size: 1.5rem;
+                font-weight: 300;
+                color: #E21B70;
+            }
+        }
+    }
+        .resturant_item{
+            width: 100%;
+            margin-top: 1rem;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            box-shadow: 0 0.2rem 1rem rgb(0 0 0 / 12%);
+            div{
+                width: 80%;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                   p{
+                    font-weight: 400;
+                    color: #333333;
+                   }
+            }
+        }
+        .popular_item{
+            width: 80%;
+           margin: 3rem auto;
+            
+             h1{
+                font-weight: 500;
+                color: #333333;
+             }
+             p{
+                font-size: 20px;
+                margin-bottom: 2rem;
+                color: darkgrey;
+             }
+           
+
+            .order{
+                display: flex;
+                justify-content: space-between;
+                box-shadow: 0 0.2rem 1rem rgb(0 0 0 / 12%);
+                border-radius: 8px;
+                .right_side{
+                  padding-top: 1rem;
+                  padding-bottom: 1rem;
+                  margin-left: 1rem;  
+                    h2{
+                        font-weight: 500;
+                        color:#333333 ;  
+                    }
+                    p{
+                        font-size: 15px;
+                        color: grey;
+                        
+                    }
+                    h4{
+                        margin-top: 1.5rem;
+                        font-size: 20px;
+                        font-weight: 400;
+                        color: #333333;
+                    }
+                }
+                .left_side{
+                  margin-right: 1rem;
+                  margin-top: 1rem;
+                    img{
+                    width: 9rem;
+                    border-radius: 8px;
+                    
+                }
+            }
+            }
+        }
+   
+}

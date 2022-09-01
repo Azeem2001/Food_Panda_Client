@@ -58,7 +58,7 @@ export const checkEmail =
     try {
       // console.log(formData);
       let response = await axios.post(
-        `https://9a5e-2407-aa80-14-568d-390a-381d-7e50-a2b3.in.ngrok.io/api/auth/is-email`,
+        `${BASE_URL}/api/auth/is-email`,
         {
           email: formData.email,
         }
@@ -81,7 +81,7 @@ export const checkEmail =
   };
    export const currentUser = (usertoken)=> async(dispatch)=> {
     try {
-      let response = await axios.post(`${BASE_URL}/api/auth/current-user`,);
+      let response = await axios.post(`${BASE_URL}/api/auth/current-user`);
       console.log(response.data)
       dispatch({ type: Types.GET_CURRENT_USER, payload: response?.data });
     } catch (error) {
@@ -98,3 +98,4 @@ export const checkEmail =
         
       )  
    }
+   

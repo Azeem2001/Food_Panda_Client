@@ -4,10 +4,10 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import CardGiftcardIcon from "@mui/icons-material/CardGiftcard";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../redux/actions/auth";
 const Navbar = () => {
-  const logo = "./images/cropped-foodpanda-favicon.png";
+  const logo = "/images/cropped-foodpanda-favicon.png";
   let token = useSelector((state) => state.auth?.token);
   let dispatch = useDispatch();
   let navigate = useNavigate();

@@ -1,7 +1,9 @@
 import React, { Fragment, useState } from "react";
 import City from "../City/City";
 import style from "./cities.module.scss";
-import { Grid } from "@mui/material";
+import { Grid, IconButton } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux/es/exports";
 const Cities = () => {
   const [allCities, setAllCities] = useState([
     {
@@ -113,6 +115,12 @@ const Cities = () => {
       text: "Sheikhupura",
     },
   ]);
+  let navigate = useNavigate();
+
+  const pageRedirector = (text) => {
+    navigate(`/city/${text}`)
+  };
+
   return (
     <Fragment>
       <div className={style.Cities_container}>
@@ -122,12 +130,12 @@ const Cities = () => {
           </div>
           <div className={style.city_cards}>
             <Grid container spacing={5}>
-              {allCities?.map((items,i) => (
-                <Fragment key={i}>
-                  <Grid item xs={12} md={6} lg={2.4}>
+              {allCities?.map((items, i) => (
+                <Grid item xs={12} md={6} lg={2.4}>
+                  <div key={i} onClick={() => pageRedirector(items.text)}>
                     <City setItem={items} />
-                  </Grid>
-                </Fragment>
+                  </div>
+                </Grid>
               ))}
               ;
             </Grid>

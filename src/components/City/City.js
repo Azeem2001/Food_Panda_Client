@@ -8,7 +8,7 @@ const City = ({ setItem }) => {
   return (
     <div className={style.city_contianer}>
       <Box>
-        <img src={setItem.image} alt="karachi" />
+        <img src={setItem.image} alt="karachi"  />
         <div className={style.city_hover}>
           <h1>{extractFirstCharacter(setItem.text)}</h1>
         </div>
