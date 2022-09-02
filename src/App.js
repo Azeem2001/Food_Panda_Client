@@ -19,9 +19,9 @@ function App() {
     let gettoken = localStorage.getItem("token");
     if (gettoken) {
       setAuthToken(gettoken);
-      dispatch(currentUser(gettoken));
+      dispatch(currentUser());
     }
-  }, []);
+  }, [token]);
 
   return (
     <Container maxWidth="xl" disableGutters={true}>
@@ -34,7 +34,7 @@ function App() {
               <Route path="/" element={<Home />}></Route>
               <Route path="/city/:id" element={<Resturant />}></Route>
               <Route
-                path="/resturantdetail"
+                path="/resturant/:id"
                 element={<ResturantDetails />}
               ></Route>
             </Fragment>
@@ -42,7 +42,6 @@ function App() {
             <Fragment>
               <Route path="/Rigester" element={<Rigester />}></Route>
               <Route path="/LoginPage" element={<LoginPage />}></Route>
-            
             </Fragment>
           )}
         </Routes>

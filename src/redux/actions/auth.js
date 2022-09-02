@@ -57,12 +57,9 @@ export const checkEmail =
     setLoading(true);
     try {
       // console.log(formData);
-      let response = await axios.post(
-        `${BASE_URL}/api/auth/is-email`,
-        {
-          email: formData.email,
-        }
-      );
+      let response = await axios.post(`${BASE_URL}/api/auth/is-email`, {
+        email: formData.email,
+      });
       response.data.isRegistered
         ? navigate("/LoginPage")
         : setRigester("account");
@@ -79,23 +76,19 @@ export const checkEmail =
       setLoading(false);
     }
   };
-   export const currentUser = (usertoken)=> async(dispatch)=> {
-    try {
-      let response = await axios.post(`${BASE_URL}/api/auth/current-user`);
-      console.log(response.data)
-      dispatch({ type: Types.GET_CURRENT_USER, payload: response?.data });
-    } catch (error) {
-      dispatch({
-        type: Types.GET_CURRENT_USER_FAILED,
-        payload: error?.response?.status,
-      });
-      console.log(error)
-    }
-   }
-   export const logout = ()=> async(dispatch)=>{
-      localStorage.removeItem('token') 
-      dispatch(
-        
-      )  
-   }
-   
+export const currentUser = () => async (dispatch) => {
+  try {
+    let response = await axios.get(`${BASE_URL}/api/auth/current-user`);
+    dispatch({ type: Types.GET_CURRENT_USER, payload: response?.data });
+  } catch (error) {
+    dispatch({
+      type: Types.GET_CURRENT_USER_FAILED,
+      payload: error?.response?.status,
+    });
+    console.log(error);
+  }
+};
+export const logout = () => async (dispatch) => {
+  localStorage.removeItem("token");
+  dispatch();
+};
