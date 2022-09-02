@@ -18,7 +18,7 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
   let navigate = useNavigate();
   let dispatch = useDispatch();
-  const panda = "./images/login_icon.jpg";
+  const panda = "/images/login_icon.jpg";
   const [values, setValues] = React.useState({
     amount: "",
     password: "",

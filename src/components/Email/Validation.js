@@ -10,7 +10,7 @@ import { checkEmail } from "../../redux/actions/auth";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 const Validation = ({ setRigester }) => {
-  const Email = "./images/email_Icon.png";
+  const Email = "/images/email_Icon.png";
   let [loading, setLoading] = useState(false);
   let [email, setEmail] = useState("");
   let navigate = useNavigate();

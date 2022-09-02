@@ -4,7 +4,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
 const HeroHeader = () => {
-  const image = "./images/hero-home-pk.webp.png";
+  const image = "/images/hero-home-pk.webp.png";
   return (
     <div className={style.HeroHeader_container}>
       <div className={style.content_section}>
