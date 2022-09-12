@@ -30,6 +30,19 @@ export default function (state = initialState, action) {
         resturant: "",
         error: "",
       };
+      // case Types.UPDATED_RESTURANT:
+      //   return{
+      //     ...state,
+      //     singleResturant: payload?.restaurant,
+      //     ...payload,
+      //   }
+      //   case Types.UPDATED_RESTURANT_FAILED:
+      //     return{
+      //       success: null,
+      //       status: "",
+      //       resturant: "",
+      //       error: "",
+      //     }
     default:
       return state;
   }

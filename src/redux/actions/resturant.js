@@ -1,7 +1,7 @@
 import axios from "axios";
 import { BASE_URL } from "../../config/config";
 import { Types } from "../Types";
-
+import { setAlert } from "./alert";
 export const allCities_ByName = (id, setLoading) => async (dispatch) => {
   try {
     let response = await axios.get(
@@ -24,17 +24,12 @@ export const resturantId = (id, setLoading) => async (dispatch) => {
   setLoading(true);
   try {
     let response = await axios.get(
-      `${BASE_URL}/api/restaurant/single-restaurant/${id}`
+      `${BASE_URL}/api/restaurant/get-restaurant/${id}`
     );
     dispatch({ type: Types.SINGLE_RESTURANT_ID, payload: response?.data });
     setLoading(false);
   } catch (error) {
     setLoading(false);
-    dispatch({
-      type: Types.SINGLE_RESTURANT_ID_FAILED,
-      payload: error?.response?.status,
-      state: null,
-    });
     console.log(error);
   }
 };

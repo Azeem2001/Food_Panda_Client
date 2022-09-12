@@ -34,7 +34,7 @@ const Validation = ({ setRigester }) => {
           onChange={(e) => setEmail(e.target.value)}
         />
         {loading ? (
-          <CircularProgress color="secondary" />
+          <CircularProgress className={style.loading} color="secondary" />
         ) : (
           <Button
             onClick={emailcheck}

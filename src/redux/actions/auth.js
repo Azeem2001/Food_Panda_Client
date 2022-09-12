@@ -1,7 +1,9 @@
 import { Types } from "../Types";
 import axios from "axios";
 import { BASE_URL } from "../../config/config";
-
+import { useNavigate } from "react-router-dom";
+import { type } from "@testing-library/user-event/dist/type";
+import { setAlert } from "./alert";
 export const userRegister =
   (formData, setEmail, setName, setPassword, navigate, setLoading) =>
   async (dispatch) => {
@@ -14,6 +16,11 @@ export const userRegister =
       // console.log(response.data)
       localStorage.setItem("token", response?.data?.token);
       dispatch({ type: Types.USER_REGISTERED, payload: response?.data });
+      dispatch(setAlert({
+        time:1000,
+        message:"Sign Up SuccessFully Done",
+        type:"success"
+      }))
       setLoading(false);
       navigate("/");
       setEmail("");
@@ -38,6 +45,11 @@ export const userLogin =
       // console.log(response.data)
       localStorage.setItem("token", response?.data?.token);
       dispatch({ type: Types.USER_LOGIN, payload: response?.data });
+      dispatch(setAlert({
+        time:1000,
+        message:"Login SuccessFully Done",
+        type:"success"
+      }))
       setLoading(false);
       navigate("/");
       setEmail("");
@@ -47,8 +59,18 @@ export const userLogin =
         type: Types.USER_LOGIN_FAILED,
         payload: error?.response?.status,
       });
-      console.log(error);
-      setLoading(false);
+      dispatch(
+        setAlert({
+          time: 1000,
+          message: error?.message,
+          type: "error",
+        }))
+        dispatch(
+          setAlert({
+            time: 1000,
+            message: error?.response?.data?.status,
+            type: "error",
+          }))
     }
   };
 
@@ -88,7 +110,15 @@ export const currentUser = () => async (dispatch) => {
     console.log(error);
   }
 };
-export const logout = () => async (dispatch) => {
+export const logout = (navigate) => async (dispatch) => {
   localStorage.removeItem("token");
-  dispatch();
+  
+  dispatch({type:Types.USER_LOGOUT});
+  dispatch(
+    setAlert({
+      time: 1000,
+      message:'User has been logout',
+      type: "success",
+    }))
+   navigate("/LoginPage")
 };

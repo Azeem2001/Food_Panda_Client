@@ -11,6 +11,8 @@ import { currentUser } from "./redux/actions/auth";
 import { useDispatch, useSelector } from "react-redux";
 import Resturant from "./pages/Resturant/Resturant";
 import ResturantDetails from "./pages/ResturantDetails/ResturantDetails";
+import ServerModal from "./components/Modal/Modal";
+import Alert from "./components/Alert/Alert";
 
 function App() {
   let token = useSelector((state) => state.auth?.token);
@@ -19,14 +21,16 @@ function App() {
     let gettoken = localStorage.getItem("token");
     if (gettoken) {
       setAuthToken(gettoken);
-      dispatch(currentUser());
+      dispatch(currentUser(gettoken));
     }
   }, [token]);
 
   return (
     <Container maxWidth="xl" disableGutters={true}>
+      
       <Router>
         <Navbar />
+        <Alert />
         <Routes>
           {token ? (
             <Fragment>
@@ -36,6 +40,10 @@ function App() {
               <Route
                 path="/resturant/:id"
                 element={<ResturantDetails />}
+              ></Route>
+              <Route
+                path="/Modal"
+                element={<ServerModal />}
               ></Route>
             </Fragment>
           ) : (

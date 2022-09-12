@@ -23,7 +23,7 @@ const Navbar = () => {
           <div className={style.icon_section}>
             <AccountCircleIcon />
             {token ? (
-              <Button onClick={() => dispatch(logout())} variant="contained">
+              <Button onClick={() => dispatch(logout(navigate))} variant="contained">
                 Logout
               </Button>
             ) : (

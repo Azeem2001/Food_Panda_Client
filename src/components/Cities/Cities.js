@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux/es/exports";
 const Cities = () => {
   const [allCities, setAllCities] = useState([
     {
-      image: "/images/Karachi.webp",
+      image: "images/Karachi.webp",
       text: "Karachi",
     },
     {

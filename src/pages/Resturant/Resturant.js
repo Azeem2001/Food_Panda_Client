@@ -11,6 +11,7 @@ const Resturant = () => {
   const dispatch = useDispatch();
   const biryani = "/images/product_1.webp";
   const navigate = useNavigate();
+  
   let { id } = useParams();
   useEffect(() => {
     dispatch(allCities_ByName(id, setLoading));

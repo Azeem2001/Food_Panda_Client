@@ -105,10 +105,20 @@
                 .left_side{
                   margin-right: 1rem;
                   margin-top: 1rem;
+                  position: relative;
                     img{
                     width: 9rem;
                     border-radius: 8px;
                     
+                }
+                Button{
+                    position: absolute;
+                    right: 0;
+                    bottom: 10px;
+                     min-width: 20px !important;
+                     height: 20px!important;
+                    background-color: #E21B70 !important;
+                        
                 }
             }
             }

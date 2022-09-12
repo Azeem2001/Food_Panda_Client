@@ -29,7 +29,7 @@ const Login = () => {
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
   let [loading, setLoading] = useState(false);
-   
+
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
   };
@@ -51,7 +51,7 @@ const Login = () => {
       password,
     };
 
-    dispatch(userLogin(data, setEmail, setPassword, navigate,setLoading));
+    dispatch(userLogin(data, setEmail, setPassword, navigate, setLoading));
   };
 
   return (
@@ -92,7 +92,6 @@ const Login = () => {
               }
             />
           </FormControl>
-        
         </div>
 
         {loading ? (
