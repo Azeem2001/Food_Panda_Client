@@ -10,6 +10,7 @@ import Cards from "../../components/Card/Cards";
 import AddIcon from "@mui/icons-material/Add";
 import { AddItems } from "../../redux/actions/addcard";
 const ResturantDetails = () => {
+  
   const [count, setCount] = useState();
   const singleResturantData = useSelector(
     (state) => state.resturant?.singleResturant
@@ -19,10 +20,11 @@ const ResturantDetails = () => {
   let foodItemData = useSelector(
     (state) => state.resturant?.restaurant?.fooditems
   );
-  
+  let Card = useSelector((state)=>state.addCart?.cart )
+  // console.log(Card)
   // console.log(ItemData)
   const addFooditem = (list)=> {
-    dispatch(AddItems(list));
+    dispatch(AddItems(list, Card ));
   };
   const [loading, setLoading] = useState(false);
   let { id } = useParams();
@@ -72,13 +74,14 @@ const ResturantDetails = () => {
                           <div className={style.right_side}>
                             <h2>{list?.title}</h2>
                             <p>{list?.description}</p>
-                            <h4>{list?.price}</h4>
+                            <h4>{Number(list?.price)}</h4>
                           </div>
                           <div className={style.left_side}>
                             <img src={list?.image} alt="pulao_image" />
                             <Button onClick={()=> addFooditem(list)}>
                               <AddIcon />
                             </Button>
+                         
                           </div>
                         </div>
                       </Grid>

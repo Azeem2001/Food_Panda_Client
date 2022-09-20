@@ -120,8 +120,17 @@
                     background-color: #E21B70 !important;
                         
                 }
+                .removeItem{
+                    position: absolute;
+                    right: 30px;
+                    bottom: 9px;
+                     min-width: 20px !important;
+                     height: 20px!important;
+                    background-color: #E21B70 !important;
+                }
             }
             }
+            
         }
    
 }

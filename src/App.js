@@ -13,6 +13,7 @@ import Resturant from "./pages/Resturant/Resturant";
 import ResturantDetails from "./pages/ResturantDetails/ResturantDetails";
 import ServerModal from "./components/Modal/Modal";
 import Alert from "./components/Alert/Alert";
+import Delivery from "./pages/Delivery/Delivery";
 
 function App() {
   let token = useSelector((state) => state.auth?.token);
@@ -45,6 +46,7 @@ function App() {
                 path="/Modal"
                 element={<ServerModal />}
               ></Route>
+              <Route path="/delivery" element={<Delivery/>}></Route>
             </Fragment>
           ) : (
             <Fragment>

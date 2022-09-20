@@ -18,6 +18,7 @@
   span{
     font-size: medium;
     font-weight: 300;
+    font-size: 20px;
   }
    h3{
     font-size: 18px;
@@ -39,21 +40,46 @@
     width: 90%;
     justify-content: space-between;
     margin: 0 auto;
+    
         h3{
           margin-top: 1.5rem;
         }
     .marginTop{
         margin-bottom: 1rem;
+
+       
       }
        .padding{
         text-align: left;
+        font-size: 18px;
+        font-weight: 600;
        }
-   
+       .removeItem{
+       background-color: #E21B70 !important;
+       height: 30px;
+       border-radius: 4px;
+      margin-top: 1rem;
       }
+      }
+      
       Button{
        border-color: #E21B70 !important;
-        color: #E21B70;
+        color: #E21B70 !important;
       }
   }
+  .totalAmount{
+    width: 90%;
+    margin: 2rem auto;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+   :nth-child(2){
+    font-weight: 900;
+   }
+  }
+  
 }
 
+.margin{
+  margin-top: 6rem;
+}

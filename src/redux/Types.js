@@ -19,4 +19,5 @@ export const Types = {
   ADD:"ADD",
   ALERT_USER_CLOSE:"ALERT_USER_CLOSE",
   ALERT_USER:"ALERT_USER",
+  REMOVER:"REMOVER"
 };

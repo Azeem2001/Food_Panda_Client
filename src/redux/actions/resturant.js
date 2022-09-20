@@ -29,7 +29,9 @@ export const resturantId = (id, setLoading) => async (dispatch) => {
     dispatch({ type: Types.SINGLE_RESTURANT_ID, payload: response?.data });
     setLoading(false);
   } catch (error) {
-    setLoading(false);
-    console.log(error);
+    dispatch({
+      type: Types.SINGLE_RESTURANT_ID_FAILED,
+      payload: error?.response?.status,
+    });
   }
 };

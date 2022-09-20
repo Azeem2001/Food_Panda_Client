@@ -1,0 +1,42 @@
+.SlipContainer{
+    width: 50%;
+    margin-top: 1rem;
+
+    .SlipItem{
+        width: 30%;
+        text-align: center;
+
+        h3{
+          color: #000000;
+        }
+        p{
+            color: #818181;
+            margin-top: 1.5rem;
+            
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+
+            span{
+                margin-left: 1.5rem;
+            }
+        }
+        .slipPrice{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+             
+            p{
+                text-align: left;
+            }
+            h3{
+                font-size: 16px;
+                font-weight: 500;
+                span{
+                    font-size: 12px;
+                    margin-left: 0.5rem;
+                }
+            }           
+
+        }
+    }
+}
